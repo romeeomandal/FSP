@@ -1,0 +1,23 @@
+ import pandas as pd
+
+# Create a DataFrame with numeric strings
+data = {
+    'Age': ['21', '25', '30', '35', '40']
+}
+
+df = pd.DataFrame(data)
+
+print("Original DataFrame:")
+print(df)
+
+print("\nData Type Before Conversion:")
+print(df.dtypes)
+
+# Convert the column to integer type
+df['Age'] = df['Age'].astype(int)
+
+print("\nDataFrame After Conversion:")
+print(df)
+
+print("\nData Type After Conversion:")
+print(df.dtypes)
