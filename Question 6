@@ -1,0 +1,22 @@
+from sklearn.preprocessing import LabelEncoder
+
+# Create a dataset with categorical values
+colors = ["Red", "Blue", "Green", "Blue"]
+
+print("Original Data:")
+print(colors)
+
+# Initialize Label Encoder
+label_encoder = LabelEncoder()
+
+# Perform Label Encoding
+encoded_colors = label_encoder.fit_transform(colors)
+
+print("\nEncoded Data:")
+print(encoded_colors)
+
+# Display mapping
+print("\nLabel Mapping:")
+for color, label in zip(label_encoder.classes_,
+                        range(len(label_encoder.classes_))):
+    print(f"{color} --> {label}")
