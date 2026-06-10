@@ -1,0 +1,36 @@
+import pandas as pd
+
+# Create a DataFrame
+df = pd.DataFrame({
+    'City': ['Kolkata', 'Delhi', 'Mumbai', 'Chennai']
+})
+
+print("Original Data:")
+print(df)
+
+# Perform One-Hot Encoding
+encoded_df = pd.get_dummies(df, columns=['City'])
+
+print("\nOne-Hot Encoded Data:")
+print(encoded_df)
+import pandas as pd
+from sklearn.preprocessing import OneHotEncoder
+
+# Dataset
+df = pd.DataFrame({
+    'City': ['Kolkata', 'Delhi', 'Mumbai', 'Chennai']
+})
+
+# Initialize encoder
+encoder = OneHotEncoder(sparse_output=False)
+
+# Encode data
+encoded = encoder.fit_transform(df[['City']])
+
+# Create DataFrame with encoded values
+encoded_df = pd.DataFrame(
+    encoded,
+    columns=encoder.get_feature_names_out(['City'])
+)
+
+print(encoded_df)
