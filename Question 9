@@ -1,0 +1,28 @@
+import pandas as pd
+from sklearn.preprocessing import MinMaxScaler, StandardScaler
+
+# Create a sample dataset
+data = {
+    'Values': [12, 25, 40, 55, 70]
+}
+
+df = pd.DataFrame(data)
+
+print("Original Dataset:")
+print(df)
+
+# -----------------------------
+# Min-Max Scaling
+# -----------------------------
+minmax_scaler = MinMaxScaler()
+df['MinMax_Scaled'] = minmax_scaler.fit_transform(df[['Values']])
+
+# -----------------------------
+# Standardization
+# -----------------------------
+standard_scaler = StandardScaler()
+df['Standardized'] = standard_scaler.fit_transform(df[['Values']])
+
+# Display results
+print("\nTransformed Dataset:")
+print(df)
