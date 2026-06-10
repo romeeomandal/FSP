@@ -1,0 +1,17 @@
+# List of values
+values = [12, 25, 40, 55, 70]
+
+# Find minimum and maximum values
+x_min = min(values)
+x_max = max(values)
+
+# Apply Min-Max Normalization
+normalized_values = []
+
+for x in values:
+    x_normalized = (x - x_min) / (x_max - x_min)
+    normalized_values.append(x_normalized)
+
+# Display results
+print("Original Values:", values)
+print("Normalized Values:", normalized_values)
