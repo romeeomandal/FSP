@@ -1,0 +1,25 @@
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+
+# Create a sample dataset
+data = {
+    'Age': [20, 25, 30, 35, 40],
+    'Salary': [30000, 40000, 50000, 60000, 70000]
+}
+
+df = pd.DataFrame(data)
+
+print("Original Dataset:")
+print(df)
+
+# Initialize StandardScaler
+scaler = StandardScaler()
+
+# Scale numerical features
+scaled_data = scaler.fit_transform(df)
+
+# Convert scaled data back to DataFrame
+scaled_df = pd.DataFrame(scaled_data, columns=df.columns)
+
+print("\nScaled Dataset:")
+print(scaled_df)
