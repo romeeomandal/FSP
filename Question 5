@@ -1,0 +1,28 @@
+import numpy as np
+
+# Dataset
+data = [10, 12, 15, 18, 20, 22, 25, 100]
+
+# Calculate mean and standard deviation
+mean = np.mean(data)
+std_dev = np.std(data)
+
+print("Dataset:", data)
+print("Mean:", mean)
+print("Standard Deviation:", std_dev)
+
+# Detect outliers
+threshold = 3
+outliers = []
+
+print("\nZ-Scores:")
+for x in data:
+    z_score = (x - mean) / std_dev
+    print(f"{x} --> {z_score:.2f}")
+
+    if abs(z_score) > threshold:
+        outliers.append(x)
+
+# Display outliers
+print("\nOutliers Detected:")
+print(outliers)
