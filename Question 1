@@ -1,0 +1,47 @@
+import pandas as pd
+import numpy as np
+
+# Create a DataFrame with missing values
+data = {
+    'Age': [25, 30, np.nan, 35, 40],
+    'Salary': [50000, np.nan, 60000, 65000, 70000],
+    'Experience': [2, 5, 3, np.nan, 8]
+}
+
+df = pd.DataFrame(data)
+
+print("Original DataFrame:")
+print(df)
+
+# -----------------------------
+# 1. Detect Missing Values
+# -----------------------------
+print("\nMissing Values in DataFrame:")
+print(df.isnull())
+
+print("\nCount of Missing Values in Each Column:")
+print(df.isnull().sum())
+
+# -----------------------------
+# 2. Replace Missing Values
+# -----------------------------
+
+# Replace with Mean
+df_mean = df.fillna(df.mean(numeric_only=True))
+
+print("\nDataFrame after Replacing Missing Values with Mean:")
+print(df_mean)
+
+# Replace with Median
+df_median = df.fillna(df.median(numeric_only=True))
+
+print("\nDataFrame after Replacing Missing Values with Median:")
+print(df_median)
+
+# -----------------------------
+# 3. Drop Rows Containing Missing Values
+# -----------------------------
+df_dropped = df.dropna()
+
+print("\nDataFrame after Dropping Rows with Missing Values:")
+print(df_dropped)
