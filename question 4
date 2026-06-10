@@ -1,0 +1,16 @@
+import pandas as pd
+
+# Create DataFrame
+df = pd.DataFrame({'Values': [12, 25, 40, 55, 70]})
+
+# Calculate mean and standard deviation
+mean = df['Values'].mean()
+std_dev = df['Values'].std()
+
+# Apply Z-score normalization
+df['Z_Score'] = (df['Values'] - mean) / std_dev
+
+print("Mean:", mean)
+print("Standard Deviation:", std_dev)
+print("\nStandardized Dataset:")
+print(df)
