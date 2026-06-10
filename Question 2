@@ -1,0 +1,6 @@
+Write a Python program to normalize the following list of values using Min-Max 
+normalization:
+[12, 25, 40, 55, 70]
+• Use the formula:
+• 𝑥′ = 𝑥−𝑥𝑚𝑖𝑛
+𝑥𝑚𝑎𝑥−𝑥𝑚𝑖�
